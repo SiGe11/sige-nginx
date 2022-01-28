@@ -1,8 +1,15 @@
 server {
   listen $PORT default_server;
+  
+  root   /usr/share/nginx/html;
+
 
   location / {
-    root   /usr/share/nginx/html;
+    index  index.html;
+    include  /etc/nginx/mime.types;
+  }
+
+  location /text {
     index  index.html;
     include  /etc/nginx/mime.types;
   }

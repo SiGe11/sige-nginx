@@ -1,5 +1,7 @@
 FROM nginx:1.21.6-alpine
 
+RUN apk add --no-cache bash
+
 COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY static-html /usr/share/nginx/html
